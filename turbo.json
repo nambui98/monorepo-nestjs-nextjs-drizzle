@@ -15,7 +15,31 @@
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": [
+        "NODE_ENV",
+        "DATABASE_URL", 
+        "REDIS_URL",
+        "PORT",
+        "JWT_SECRET",
+        "NEXT_PUBLIC_API_URL"
+      ]
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "db:studio": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false,
+      "env": ["DATABASE_URL"]
     }
   }
 }
