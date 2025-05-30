@@ -25,6 +25,16 @@
                 "NEXT_PUBLIC_API_URL"
             ]
         },
+        "build-database": {
+            "cache": false,
+            "persistent": true,
+            "env": ["DATABASE_URL"]
+        },
+        "build-be": {
+            "cache": false,
+            "persistent": true,
+            "env": ["DATABASE_URL"]
+        },
         "start": {
             "cache": false,
             "persistent": true,

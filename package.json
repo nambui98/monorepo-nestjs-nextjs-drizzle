@@ -4,6 +4,8 @@
     "private": true,
     "scripts": {
         "build": "turbo build",
+        "build-database": "turbo build-database",
+        "build-be": "turbo build-be",
         "dev": "turbo dev",
         "start": "turbo start",
         "lint": "turbo lint",
