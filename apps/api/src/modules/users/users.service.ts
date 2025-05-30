@@ -1,6 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { Inject, Injectable } from '@nestjs/common';
 import { DATABASE_CONNECTION } from 'src/database/database.module';
-import { CreateUserDto, Database, insertUserSchema, UpdateUserDto, User, usersTable } from '@workspace/database';
+import {
+  CreateUserDto,
+  Database,
+  insertUserSchema,
+  UpdateUserDto,
+  User,
+  usersTable,
+} from '@workspace/database';
 
 @Injectable()
 export class UsersService {
@@ -11,7 +19,10 @@ export class UsersService {
     if (!result.success) {
       throw new Error('Invalid user data');
     }
-    const [user] = await this.db.insert(usersTable).values([createUserDto]).returning();
+    const [user] = await this.db
+      .insert(usersTable)
+      .values([createUserDto])
+      .returning();
     return user;
   }
 

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // config/configuration.ts
 export default () => ({
   port: parseInt(process.env.PORT!, 10) || 3000,
@@ -24,11 +27,11 @@ import { z } from 'zod';
 export const validationSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']),
   PORT: z.coerce.number().default(3000),
-//   DATABASE_HOST: z.string(),
-//   DATABASE_PORT: z.coerce.number().default(5432),
-//   DATABASE_USERNAME: z.string(),
-//   DATABASE_PASSWORD: z.string(),
-//   DATABASE_NAME: z.string(),
+  //   DATABASE_HOST: z.string(),
+  //   DATABASE_PORT: z.coerce.number().default(5432),
+  //   DATABASE_USERNAME: z.string(),
+  //   DATABASE_PASSWORD: z.string(),
+  //   DATABASE_NAME: z.string(),
   JWT_SECRET: z.string(),
   JWT_EXPIRES_IN: z.string().default('1d'),
 });
